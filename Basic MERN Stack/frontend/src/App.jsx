@@ -5,13 +5,14 @@ function App() {
   const [jokes, setJokes] = useState([]);
 
   useEffect(() => {
-    axios.get("/api/jokes")
+    axios
+      .get("http://localhost:3000/api/jokes")
       .then((res) => {
         setJokes(res.data);
       })
       .catch((error) => {
         console.log(error);
-    })
+      });
   },[])
 
   return (
